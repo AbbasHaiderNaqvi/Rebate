@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.grid-item {
+    border: none;
+}
+.note-bg{
+    background: #243743;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
