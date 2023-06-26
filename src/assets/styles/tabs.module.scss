@@ -1,13 +1,38 @@
+.tabs-container {
+  /* Add styles to the overall tab container */
+}
 
+.tab-list {
+  /* Add styles to the tab list */
+  list-style-type: none; /* Remove bullet points */
+  display: flex; /* Display tabs horizontally */
+}
 
-
-.cover {
-  width: 100vw;
-  height: 20vw;
-  background-size: cover;
-  background-position: center;
+.tab {
+  /* Add styles to individual tabs */
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  background: #1D1E22;
+  min-width: 100px;
 
 }
-.ms-5 {
-  margin-left: 1.25rem;
+
+.tab-panel {
+  /* Add styles to the tab content panels */
+}
+@media (max-width: 600px) {
+  .tab {
+    /* Add styles to individual tabs */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background: #1D1E22;
+    min-width: 20%;
+
+  }
+}
+
+ .tab--selected {
+   background: linear-gradient(90.65deg, #FF0844 0%, #F8501D 100%);
 }

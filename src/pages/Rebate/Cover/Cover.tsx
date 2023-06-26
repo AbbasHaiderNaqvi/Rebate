@@ -1,16 +1,31 @@
 import styles from './Cover.module.scss';
-import React from 'react';
-import coverImage from '../../../assets/images/point_system_cover.jpeg';
+import React, {useEffect, useState} from 'react';
 
 
-export const Cover: React.FC = () => {
+interface CoverProps {
+    imageUrl: string;
+    imageUrlMobile: string;
+}
+
+export const Cover: React.FC<CoverProps> = ({imageUrl, imageUrlMobile}) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
         <div className={styles['container']}>
-            <div className={`${styles['cover']}`} style={{backgroundImage: `url(${coverImage})`}}/>
-            <div className={`${styles['ms-5']} ${styles['me-5']}`}>
-                <h1 className={styles['cover-text']}>点数計算</h1>
-                <h1 className={styles['cover-text']} style={{top: '50%'}}>Point System</h1>
-            </div>
+            <img alt={'cover'} className={`${styles['cover']}`} src={isMobile ? imageUrlMobile : imageUrl}/>
+
         </div>
     );
 }
