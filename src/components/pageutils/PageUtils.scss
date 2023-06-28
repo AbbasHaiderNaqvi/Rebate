@@ -1,29 +1,53 @@
 table {
-    border-collapse: collapse;
-    border: transparent;
-    background: #3D3F47;
-;
+  border-collapse: collapse;
+  border: transparent;
+  width: 100%;;
 }
-td{
-    border: 2px solid #26272C;
-    width: 10.625rem;
-    height: 2.5rem;
+
+td {
+  border-bottom: 2px solid #4E4E4E;
+  height: 4rem;
+
+  //background: transparent;
 
 }
-td:first-child {
-    background:#243743FF;
-    font-weight: bold;
-    width: 1rem;
 
-}
 th {
-    background: #243743FF;
-    font-weight: bold;
-    border: 2px solid #26272C;
-    width: 10.625rem;
-    height: 2.5rem;
+  background: #1D1E22;
+  font-weight: bold;
+  height: 2.5rem;
+  cursor: pointer;
 }
 
+.sort-button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+}
+
+.pg-button {
+  background: linear-gradient(90.65deg, #FF0844 0%, #F8501D 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  height: 60px;
+  width: 60px;
+  font-weight: 700;
+  margin: 0.5rem;
+  font-size: 18px;
+  box-shadow: 0 5px 0 0 #AB1313;
+  cursor: pointer;
+}
+button :disabled{
+  box-shadow: 0 5px 0 0 #483f3f;
+  background: #4E4E4E !important;
+}
+.active{
+  box-shadow: 0 5px 0 0 #483f3f;
+  background: #4E4E4E !important;
+}
 //th:not(:first-child),
 //td:not(:first-child) {
 //    background-color: lightgray;
